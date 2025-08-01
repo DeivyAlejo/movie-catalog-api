@@ -1,0 +1,30 @@
+{
+  "name": "movie-catalog-api",
+  "version": "1.0.0",
+  "description": "API for movie catalog",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js",
+    "server": "nodemon server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DeivyAlejo/movie-catalog-api.git"
+  },
+  "author": "Deivy Munoz",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/DeivyAlejo/movie-catalog-api/issues"
+  },
+  "homepage": "https://github.com/DeivyAlejo/movie-catalog-api#readme",
+  "dependencies": {
+    "dotenv": "^17.2.1",
+    "express": "^5.1.0",
+    "express-async-handler": "^1.2.0",
+    "mongoose": "^8.17.0"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.10"
+  }
+}
