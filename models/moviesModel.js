@@ -10,7 +10,8 @@ const moviesSchema = mongoose.Schema({
     createdAt: {
         type:Date,
         default:Date.now
-    }
+    },
+    director: [{type: mongoose.Schema.Types.ObjectId, ref:'Director'}]
 
 })
 

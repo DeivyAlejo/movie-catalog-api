@@ -5,7 +5,7 @@ const Movies = require('../models/moviesModel')
 // @route   GET /api/movies
 // @access  Public
 const getMovies = asyncHandler(async (req, res) => {
-    const movies = await Movies.find()
+    const movies = await Movies.find().populate('director')
 
     res.status(200).json(movies)
 })
@@ -26,7 +26,8 @@ else if(!req.body.title){
     const movie = await Movies.create({
         title: req.body.title,
         decription: req.body.description,
-        releaseYear: req.body.releaseYear
+        releaseYear: req.body.releaseYear,
+        director: req.body.director
     })
     res.status(200).json(movie)
 })

@@ -5,6 +5,7 @@ const connectDB = require('./config/db')
 const port = process.env.PORT || 5000
 
 const movieRoutes = require('./routes/moviesRoutes')
+const directorRoutes = require('./routes/directorRoutes')
 
 connectDB()
 
@@ -14,6 +15,7 @@ app.use(express.json())
 app.use(express.urlencoded({extended: false}))
 
 app.use('/api/movies', movieRoutes)
+app.use('/api/directors', directorRoutes)
 
 app.use(errorHandler)
 
