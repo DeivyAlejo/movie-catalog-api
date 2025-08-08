@@ -1,0 +1,10 @@
+{
+    "mongodbLanguageServer.trace.server": {
+
+    },
+    "editor.quickSuggestions": {
+  "other": true,
+  "comments": false,
+  "strings": true
+}
+}
