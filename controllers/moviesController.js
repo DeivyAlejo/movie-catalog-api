@@ -5,7 +5,15 @@ const Movies = require('../models/moviesModel')
 // @route   GET /api/movies
 // @access  Public
 const getMovies = asyncHandler(async (req, res) => {
-    const movies = await Movies.find()
+    const {genre, director} = req.query
+    let filter = {}
+    if(genre){
+        filter.genre = genre
+    }
+    if(director){
+        filter.director = director
+    }
+    const movies = await Movies.find(filter)
     .populate('director')
     .populate('genre')
 
