@@ -12,7 +12,7 @@ const moviesSchema = mongoose.Schema({
         default:Date.now
     },
     director: [{type: mongoose.Schema.Types.ObjectId, ref:'Director'}],
-    genre: [{type:mongoose.Schema.Types.ObjectId, ref:'Genre'}]
+    genre: [{type: mongoose.Schema.Types.ObjectId, ref:'Genre'}]
 
 })
 

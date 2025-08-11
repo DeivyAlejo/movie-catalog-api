@@ -6,6 +6,7 @@ const port = process.env.PORT || 5000
 
 const movieRoutes = require('./routes/moviesRoutes')
 const directorRoutes = require('./routes/directorRoutes')
+const genreRoutes = require('./routes/genresRoutes')
 
 connectDB()
 
@@ -16,6 +17,7 @@ app.use(express.urlencoded({extended: false}))
 
 app.use('/api/movies', movieRoutes)
 app.use('/api/directors', directorRoutes)
+app.use('/api/genres', genreRoutes)
 
 app.use(errorHandler)
 

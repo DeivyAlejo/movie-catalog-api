@@ -3,11 +3,10 @@ const mongoose = require('mongoose')
 const directorSchema = mongoose.Schema({
     name:{
         type: String,
-        require: [true, 'Please add a director name']
+        required: [true, 'Please add a director name']
     },
     dob: Date,
-    bio: String,
-    movies: [{type: mongoose.Schema.Types.ObjectId, ref: 'Movies'}]
+    bio: String
 })
 
 module.exports = mongoose.model('Director', directorSchema)

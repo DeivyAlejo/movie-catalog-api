@@ -5,7 +5,9 @@ const Movies = require('../models/moviesModel')
 // @route   GET /api/movies
 // @access  Public
 const getMovies = asyncHandler(async (req, res) => {
-    const movies = await Movies.find().populate('director')
+    const movies = await Movies.find()
+    .populate('director')
+    .populate('genre')
 
     res.status(200).json(movies)
 })
