@@ -20,6 +20,17 @@ const getMovies = asyncHandler(async (req, res) => {
     res.status(200).json(movies)
 })
 
+// @desc    Get movie by id
+// @route   GET /api/movies/:id
+// @access  Public
+const getMovie = asyncHandler(async (req, res) => {
+    const movies = await Movies.findById(req.params.id)
+    .populate('director')
+    .populate('genre')
+
+    res.status(200).json(movies)
+})
+
 // @desc    Set movie
 // @route   POST /api/movies
 // @access  Public
@@ -77,6 +88,7 @@ const deleteMovie = asyncHandler(async (req, res) => {
 
 module.exports = {
     getMovies,
+    getMovie,
     setMovie,
     updateMovie,
     deleteMovie,
